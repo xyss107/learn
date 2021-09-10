@@ -1,0 +1,48 @@
+请求端：
+CloseableHttpClient client = HttpClients.createDefault();
+创建基于http协议的客户端
+
+HttpPost httpPost = new HttpPost(requestUrl);
+创建基于http协议的post请求
+requesstUrl访问端口地址
+
+StringEntity stringEntity(String,编码)
+创建传输实体,参数一般为字符串的json
+
+HttpResponse response
+接收响应实体
+（!!响应实体接收后只能使用一次）
+
+httpPost.setEntity(StringEntity)
+将实体放入http传输轨道
+
+response = client.execute(httpPost)
+将传输轨道注册搭配客户端
+返回响应实体
+
+EntitysUtils.toString(response.getEntity())
+将响应实体转换为字符串
+（！响应实体只能使用一次）
+————————————————
+响应端
+(@RequestBody String json,
+HttpServletRequest,HttpservletResponse)
+json用于接收数据字段
+
+res.setStatus()
+设置响应状态码
+
+res.setContentType("application/json;charset=utf-8")
+响应字段类型
+
+PrintWriter write = res.getWrite()
+获取响应写入体
+
+write.write(Object)
+写入响应对象
+
+write.close()
+
+
+
+

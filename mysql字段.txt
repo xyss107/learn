@@ -1,0 +1,9 @@
+插入字段如果有就更新字段
+insert into <>() values()
+on duplicate key update 
+key = value
+
+日期格式转换
+DATE_FORMAT(datetime, '%Y%m%d')
+group by时不能用别名
+
